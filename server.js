@@ -19,7 +19,7 @@ const apiConfigRoute = require("./routes/api.route");
 connectDB();
 
 app.use(cors({
-  origin: 'http://127.0.0.1:5500', // allow all origins for development
+  origin: '*', // allow all origins for development
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'x-admin']
 }));
