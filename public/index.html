@@ -18,7 +18,7 @@
     <script>
       async function loadProjects() {
         try {
-          const res = await fetch("http://localhost:3000/api/v1/projects");
+          const res = await fetch("/api/v1/projects");
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
           const result = await res.json(); // { success, count, data }
