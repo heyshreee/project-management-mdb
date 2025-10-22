@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login | Project Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer src="/scripts/show.msg.js"></script>
+
+  </head>
+  <body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+    <div
+      class="bg-white shadow-xl rounded-xl p-8 w-full max-w-sm border border-gray-200"
+    >
+      <h1 class="text-3xl font-extrabold text-gray-800 text-center mb-8">
+        Project Admin
+      </h1>
+      <p class="text-center text-sm text-gray-500 mb-6">
+        Enter the administrative key to access the dashboard.
+      </p>
+
+      <div class="mb-5">
+        <label
+          for="adminKeyInput"
+          class="block text-gray-700 font-medium text-sm mb-2"
+          >Admin Key</label
+        >
+        <input
+          id="adminKeyInput"
+          type="password"
+          placeholder="••••••••"
+          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition duration-150"
+        />
+      </div>
+
+      <button
+        id="loginBtn"
+        class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition duration-200 transform hover:scale-[1.01] shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
+      >
+        Secure Login
+      </button>
+
+      <p
+        id="errorMsg"
+        class="text-sm mt-4 text-center hidden p-2 rounded-lg text-red-600"
+      ></p>
+    </div>
+
+    <script src="/scripts/login.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const adminKeyInput = document.getElementById("adminKeyInput");
+        const loginBtn = document.getElementById("loginBtn");
+       // const errorMsg = document.getElementById("errorMsg");
+
+        adminKeyInput.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            loginBtn.click();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

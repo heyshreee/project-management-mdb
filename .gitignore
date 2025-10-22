@@ -1,0 +1,42 @@
+.env
+# Ignore node
+node_modules
+
+# Ignore logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Ignore runtime data files
+pids
+*.sqlite
+*.db
+*.sqlite3
+
+# Ignore OS files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore compiled files
+*.o
+*.so
+*.d
+*.pyc
+*.pyo
+*.obj
+dist
+build
+*.egg-info
+package-lock.json
+pip-delete-this-directory
+__pycache__/

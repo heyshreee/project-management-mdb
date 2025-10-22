@@ -1,0 +1,10 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+/* Custom styles for the line-clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
