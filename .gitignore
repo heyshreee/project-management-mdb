@@ -40,3 +40,6 @@ build
 package-lock.json
 pip-delete-this-directory
 __pycache__/
+
+json file
+service-account-key.json

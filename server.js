@@ -1,13 +1,16 @@
 require("dotenv").config();
 
 const express = require("express");
-const cors = require('cors')
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const fetch = require("node-fetch");
 const connectDB = require("./config/db");
 const { errorHandler } = require("./middlewares/error.middleware");
 const { PORT, API_VERSION } = require("./config/config");
 const adminRouter = require('./routes/admin.route')
 const app = express();
 const path = require("path");
+const formRoute = require("./routes/form.route");
 
 
 // ROUTING
@@ -27,6 +30,7 @@ app.use(cors({
 app.use(express.static('public'));
 
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -35,6 +39,10 @@ app.use(`/api/${API_VERSION}/projects`, router);
 app.use(`/api/${API_VERSION}/`,adminRouter)
 
 app.use(`/api/${API_VERSION}/config`, apiConfigRoute);
+
+app.use(`/api/${API_VERSION}/`, formRoute)
+
+
 
 
 app.use("/", pageRoutes);
